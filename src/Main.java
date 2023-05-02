@@ -10,6 +10,7 @@ public class Main {
     public static void battleshipGame() {
 
         /** board issues */
+
         System.out.println("Enter the board size:");
         String[] sizeStr = scanner.nextLine().split("X");
         int n = Integer.parseInt(sizeStr[0]);
@@ -228,7 +229,7 @@ public class Main {
                     orientation = rnd.nextInt(2);
                     boundaries = checkBoardBoundaries(n, m, currentSizeBattleship, rowBattleship, colBattleship, orientation);
                     overlap = checkOverlap(compBoard, currentSizeBattleship, rowBattleship, colBattleship, orientation);
-                    adjacent = checkAdjacent(compBoard, rowBattleship, colBattleship);
+                    adjacent = checkAdjacentBattleship(compBoard, rowBattleship, colBattleship,currentSizeBattleship , orientation);
                     tile = checkStartingTile(n, m, rowBattleship, colBattleship);
                     if (!tile)
                         continue;
